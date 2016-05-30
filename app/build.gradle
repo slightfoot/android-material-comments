@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+	compileSdkVersion 23
+	buildToolsVersion "23.0.3"
+
+	defaultConfig {
+		applicationId "com.example.comments"
+		minSdkVersion 15
+		targetSdkVersion 23
+		versionCode 1
+		versionName "1.0"
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+
+	compileOptions {
+		encoding 'UTF-8'
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+
+	dataBinding {
+		enabled = true
+	}
+}
+
+dependencies {
+	compile 'com.android.support:appcompat-v7:23.4.0'
+	compile 'com.android.support:recyclerview-v7:23.2.1'
+	compile 'com.google.code.gson:gson:2.6.2'
+}
